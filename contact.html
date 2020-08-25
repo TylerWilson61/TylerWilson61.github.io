@@ -41,7 +41,7 @@
       }
 
       body {
-        background-color: rgb(245, 245, 236);
+        background-color: rgb(242, 242, 228);
       }
 
       #logo {
@@ -67,22 +67,18 @@
   header {
      font-weight:300;
      font-size: 1em;
-      color: grey;
-        background-color:#d0dce6;
-        /* padding-top: .5%; */
-        /* padding-right: 1%; */
-        /* max-width:100%;  */
+     /* background-color: lightgrey; */
+     opacity: .9;
+     
         overflow:hidden;
-    /* background-color: #888db8; */
-    /* padding: 0px 0px; */
+
     width:100%;
-    opacity:.75;
     justify-content: center;
-    /* display: flex; */ 
-    box-shadow: 0px 7px 5px #707070;
+
+    /* box-shadow: 0px 7px 5px #707070;
     -webkit-box-shadow: 0px 7px 5px #707070;
     -moz-box-shadow: 0px 7px 5px #707070;  
-    margin-bottom: 4%;
+    margin-bottom: 4%; */
       }
 
 
@@ -112,7 +108,7 @@
         margin-left: 15%;
         margin-right: 15%;
         /* margin-top: 3%; */
-        text-align: left;
+        text-align:center;
         /* padding-top: 50px; */
       }
 
@@ -151,6 +147,7 @@
     position: relative;
     display: inline-block;
     /* padding: 5px; */
+    /* padding-top: 100px; */
   }
 
   #container:hover{
@@ -242,19 +239,18 @@
     /* position:fixed; */
   }
 
-  header{
-    background-color: aqua;
-  }
+  
 }
 
 #txt{
   /* margin-top: 3%; */
   margin-bottom:10%;
   /* background-color: rgb(244, 236, 236); */
-  width: 61%;
+  width: 68%;
   height: 300px;
   /* height:800px: */
-  transform:translateX(35%);
+  transform:translateX(25%);
+  
 }
 
 .contact_img{
@@ -271,7 +267,7 @@
 
 #imgf {
   margin: 0 auto;
-  width: 50%;
+  width: 23%;
   /* display: flex; */
 /* align-items: center; */
 margin-bottom: 0px;
@@ -283,6 +279,11 @@ margin-bottom: 0px;
 
 #logo2 {
   float:left;
+
+
+
+  /* width:53%;
+  padding-bottom: 20px; */
 }
 
 #contact_txt {
@@ -291,20 +292,22 @@ margin-bottom: 0px;
     /* width: 100%; */
     /* left:33%; */
     font-family: 'Montserrat';
-    font-size: 94px;
+    font-size: 44px;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
     color:seashell;
     text-align: center;
-    transform: translateY(-275%);
+    transform: translateY(-250%);
+    
 
     /* max-width: 100%; */
 
 }
 
-
-
+#thinbar {
+  padding-bottom: 3%;
+}
 
     </style>
   </head>
@@ -315,23 +318,28 @@ margin-bottom: 0px;
         <div> <a href="contact.html" id = "active_page">contact</a> </div>
         <div> <a href="about.html" class = "nav">about </a> </div>
         <div> <a href = "photography.html" class = "nav">photography</a> </div>
-        <div> <a href="about.html" class = "nav">music</a> </div>
-        <div> <a href="https://www.youtube.com/watch?v=ob_nQpBFpL0" class = "nav">projects</a></div>
+        <div> <a href="music.html" class = "nav">music</a> </div>
+        <div> <a href="projects.html" class = "nav">projects</a></div>
         <div> <a href = "blog.html" class = "nav">blog</a> </div>
         
         <div id="logo2">
           <a href ="/index.html"><img src = "logo_53.svg"></a>
         </div>
       </div>
+ 
 
       <!-- <div id="logo">
         <a href ="/index.html"><img src = "logo_53.svg"></a>
       </div>
       
       <h1 id = 'title'>contact</h1> -->
+      
+
     </header>
-   
-    <!-- <h1 id = 'title'>Contact</h1> -->
+    <div id = 'thinbar'> 
+      <hr style="width:85%; margin: auto;">
+      </div>
+    
 
     <div id = "imgf">
       <img src = "contact_photo.jpg" class = "contact_img">
@@ -378,8 +386,8 @@ margin-bottom: 0px;
     <div class="footer" id = "footer_div">
 
           <div> <a href="index.html" class = "nav">home </a> </div> 
-          <div> <a href="https://www.youtube.com/watch?v=ob_nQpBFpL0"  class = "nav">projects</a></div>
-          <div> <a href="about.html"  class = "nav">music</a> </div>
+          <div> <a href="projects.html"  class = "nav">projects</a></div>
+          <div> <a href="music.html"  class = "nav">music</a> </div>
           <div> <a href = "blog.html"  class = "nav">blog</a> </div>
           <div> <a href = "photography.html"  class = "nav">photography</a> </div>
           <div> <a href="about.html"  class = "nav">about</a> </div>
