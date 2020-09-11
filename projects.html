@@ -1,21 +1,425 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Baloo 2' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=News Cycle' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mulish' rel='stylesheet'>
     <meta charset="utf-8">
-    <title></title>
-  </head>
-  <style>
-    #label{
-      display: inline-block;
-    }
-    #outer{
-      text-align: center;
-    }
+    <title>TW | PROJECTS</title>
 
-  </style>
+      <!--fade out effect-->
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type = "text/javascript">
+  $(function(){
+      var documentEl = $(document)
+      var fadeElem = $('.frame_img');
+
+      documentEl.on('scroll', function(){
+          var curr_pos = documentEl.scrollTop();
+          fadeElem.each(function(){
+              var $this = $(this)
+              var elemOffsetTop = $this.offset().top
+              var opacity = getComputedStyle($this[0]).opacity
+              if (curr_pos > elemOffsetTop){
+                $this.css("opacity", .4)
+              } 
+              else{
+                if (elemOffsetTop > curr_pos && opacity != .2) {
+                $this.css("opacity", 1)
+                }
+              } 
+              
+          });
+      });
+  });
+</script>
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+
+      body {
+        background-color: rgb(242, 242, 228);
+      }
+
+      #logo {
+        display:flex;
+        position:relative;
+        left:50%;
+        transform: translateX(-50%);
+        margin-top:3%;
+        min-width: 50px;
+        min-height: 50px;
+        display: inline-block;
+        margin-top:2%;
+        /* margin-top: .45%;
+        margin-left: 1%; */
+      }
+
+
+      .nav:hover {
+    opacity: 0.5;
+  }
+
+
+  header {
+     font-weight:300;
+     font-size: 1em;
+     /* background-color: lightgrey; */
+     opacity: .9;
+     
+        overflow:hidden;
+
+    width:100%;
+    justify-content: center;
+
+    /* box-shadow: 0px 7px 5px #707070;
+    -webkit-box-shadow: 0px 7px 5px #707070;
+    -moz-box-shadow: 0px 7px 5px #707070;  
+    margin-bottom: 4%; */
+      }
+
+
+      #contacts { /* fix the footer */
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+        font-family: "baloo 2";
+        font-weight: 100;
+        color: 	rgb(169,169,169);
+        width:40%;
+        margin: 0 auto 300px auto;
+        margin-top: 20px;
+        opacity: 75%;
+
+      }
+
+      #description{
+        /* margin: 0 auto; */
+        /* width: 100%; */
+        font-size: 25px;
+        line-height: 35px;
+        border-radius: 4px;
+        font-family: "Mulish";
+        font-weight: 50;
+        color: grey;
+        margin-left: 15%;
+        margin-right: 15%;
+        /* margin-top: 3%; */
+        text-align:left;
+        /* padding-top: 50px; */
+      }
+
+
+  #insta, #linkedin, #soundcloud, #github {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  #github {
+    max-height: 70%;
+    max-width: 70%;
+  }
+  #insta{
+    max-height: 100%;
+    max-width: 100%;
+  }
+  #linkedin{
+    max-height: 70%;
+    max-width: 70%;
+  }
+  #soundcloud{
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #container{
+    float: left;
+    width: 33%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    /* padding: 5px; */
+    /* padding-top: 00px; */
+  }
+
+  #container:hover{
+    opacity: .5;
+
+  }
+
+  #socials{
+    display: flex;
+    width: 200px;
+    height: 40px;
+    bottom:0px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 250px;
+    
+  }
+  .navbar a {
+    float:right;
+    color:rgb(55, 48, 48);
+    /* text-align: center; */
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-family: 'baloo 2';
+    font-weight: 100;
+    padding-top:0px;
+    margin-top: 2%;
+    margin-bottom:2%;
+  }
+
+  .footer a {
+   color:#3C3C3C;
+   padding: 12px;
+   text-decoration: none;
+   font-size: 18px;
+   line-height: 25px;
+   border-radius: 4px;
+   font-family: "baloo 2";
+   font-weight: 300;
+   display:inline-block;
+ }
+
+ #footer_div{
+   display: flex;
+   height: 40px;
+   padding-top: 20px;
+   padding-bottom: 0px;
+   bottom:0px;
+   justify-content: center;
+   position: relative;
+
+ }
+
+#active_page {
+  font-weight:bold;
+  color:rgb(8, 109, 77);
+  /* text-decoration: underline; */
+}
+
+
+#title{
+  font-family: 'Montserrat';
+  padding-top: 3%;
+  padding-bottom: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:grey;
+  font-size: 50px;
+
+  
+}
+
+@media only screen and (max-width: 980px){
+
+  #socials{
+    position: fixed;
+    bottom:50px;
+  }
+
+  #footer_div {
+    bottom:0;
+    position:fixed;
+    transform:translateX(40%);
+    /* transform: translateY(-100%); */
+    /* position:fixed; */
+  }
+
+  
+}
+
+#txt{
+  /* margin-top: 3%; */
+  margin-bottom:10%;
+  /* background-color: rgb(244, 236, 236); */
+  width: 68%;
+  height: 300px;
+  /* height:800px: */
+  transform:translateX(25%);
+  
+}
+
+.frame_img{
+  position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 7px 5px 5px #707070;
+    -webkit-box-shadow: 7px 5px 5px #707070;
+    -moz-box-shadow: 7px 5px 5px #707070;
+  margin-top:3%;
+  margin-bottom: 0px;
+  transition: ease 1s;
+}
+
+#imgf {
+  margin: 0 auto;
+  width: 23%;
+  /* display: flex; */
+/* align-items: center; */
+margin-bottom: 0px;
+  
+  
+
+}
+
+
+#logo2 {
+  float:left;
+
+
+
+  /* width:53%;
+  padding-bottom: 20px; */
+}
+
+#contact_txt {
+  position: relative;
+    /* top:50%; */
+    /* width: 100%; */
+    /* left:33%; */
+    font-family: 'Montserrat';
+    font-size: 44px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    color:seashell;
+    text-align: center;
+    transform: translateY(-250%);
+    
+
+    /* max-width: 100%; */
+
+}
+
+#thinbar {
+  padding-bottom: 3%;
+}
+
+    </style>
+  </head>
   <body>
-    <div id = 'outer'> 
-    <h1 id = 'label'>COMING SOON</h1>
+    <header>
+
+      <div class = "navbar">
+        <div> <a href="contact.html" class = "nav">contact</a> </div>
+        <div> <a href="about.html" id = "active_page">about </a> </div>
+        <div> <a href = "photography.html" class = "nav">photography</a> </div>
+        <div> <a href="music.html" class = "nav">music</a> </div>
+        <div> <a href="projects.html" class = "nav">projects</a></div>
+        <div> <a href = "blog.html" class = "nav">blog</a> </div>
+        
+        <div id="logo2">
+          <a href ="/index.html"><img src = "logo_53.svg"></a>
+        </div>
+      </div>
+ 
+
+      <!-- <div id="logo">
+        <a href ="/index.html"><img src = "logo_53.svg"></a>
+      </div>
+      
+      <h1 id = 'title'>contact</h1> -->
+      
+
+    </header>
+    <div id = 'thinbar'> 
+      <hr style="width:85%; margin: auto;">
+      </div>
+    
+
+    <div id = "imgf">
+      <img src = "projects_photo.jpg" class = "frame_img">
+      <div id = "contact_txt">PROJECTS</div>
+    </div>
+    
+    <div id = "txt">
+    <div id="description">
+      <!-- <p><strong>I am always on the look out for new opportunities!</strong></p>
+      <br>
+      <p>Email is the best way to reach me whether it be a professional inquiry or a dj booking. You can check out my socials below if you need further information.</strong></p>
+      <br>
+      <br>
+      <p>Email: 17tywilson21@gmail.com</p>
+      <p>Phone: +1 412-892-0464</p> -->
+      <p>Well, if you want to get to know me better you came to the right place. I think you can really get to know a lot about me by poking around this site. I like to dj and make music and edits, I like to cook different kinds of foods and explore new ideas, and I like to program!
+        I grew up all over the United States and even lived in New Zealand for a little bit. I think that upbringing exposed me to a lot of different ideas and ways of life and its something im really appreciative of. </p>
+      <br>
+      <p>
+        Currently, I am finishing my degree in Computer Science at NYU Shanghai. After that.. who knows! I'm excited to see what opporunities lie ahead for me, and will be sure to document my journeys and discoveries here along the way.
+      </p>
+    </div>
   </div>
+
+    <div id = "socials" class = "social_div">
+      <div id = "container">
+        <a href = "https://github.com/TylerWilson61" target = "_blank"><img src = "github.svg" id = "github"></a>
+      </div>
+      <div id = "container">
+        <a href= "https://www.instagram.com/tylerwilson1614/" target="_blank"><img src = "instagram.png" id = "insta"></a>
+      </div>
+      <div id = "container">
+        <a href = "https://soundcloud.com/tee_dj" target = "_blank"> <img src = "soundcloud.png" id = "soundcloud"></a>
+      </div>
+      <div id = "container">
+        <a href = "https://www.linkedin.com/in/tylerdwilson13/" target = "_blank"><img src = "linkedin.png" id = "linkedin"></a>
+      </div>
+      
+    </div>
+    
+    <div class="footer" id = "footer_div">
+
+          <div> <a href="index.html" class = "nav">home </a> </div> 
+          <div> <a href="projects.html"  class = "nav">projects</a></div>
+          <div> <a href="music.html"  class = "nav">music</a> </div>
+          <div> <a href = "blog.html"  class = "nav">blog</a> </div>
+          <div> <a href = "photography.html"  class = "nav">photography</a> </div>
+          <div> <a href="about.html"  class = "nav">about</a> </div>
+          <div> <a href="contact.html" id = "active_page">contact</a> </div>
+          
+          
+          
+          
+    </div>
+
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!--
+projects:
+
+info vis
+
+covid
+
+instagram bot
+
+chat sys
+
+future ideas
+
+
+
+-->
